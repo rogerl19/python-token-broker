@@ -19,12 +19,12 @@ gcloud config set compute/region us-east4 && \
 gcloud compute instances create token-broker \
   --service-account=$TOKEN_BROKER_SA \
   --tags=https,ssh \
-	--machine-type g1-small \
-	--image-project debian-cloud \
-	--image-family debian-9 \
+  --machine-type g1-small \
+  --image-project debian-cloud \
+  --image-family debian-9 \
   --scopes https://www.googleapis.com/auth/cloud-platform \
-	--network token-broker-vpc \
-	--subnet subnet1 \
+  --network token-broker-vpc \
+  --subnet subnet1 \
   --metadata startup-script='#! /bin/bash
         sudo apt update -y
         sudo apt install git python3-pip -y
