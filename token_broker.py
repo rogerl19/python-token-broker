@@ -82,7 +82,7 @@ class Handler(BaseHTTPRequestHandler):
             # Authenticate client.
             ip = self.connection.getpeername()[0]
             host = socket.gethostbyaddr(ip)
-            ssl.match_hostname(cert, host[0])
+            # ssl.match_hostname(cert, host[0])
             
             logging.info("Client %s authenticated" % str(host))
             
