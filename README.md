@@ -29,7 +29,7 @@ gcloud compute instances create token-broker \
         sudo apt update -y
         sudo apt install git python3-pip -y
 
-        sudo git clone https://github.com/GoogleCloudPlatform/python-token-broker.git /opt/python-token-broker
+        sudo git clone https://github.com/rogerl19/python-token-broker.git /opt/python-token-broker
         sudo pip3 install -r /opt/python-token-broker/requirements.txt'
 
 TOKEN_BROKER_FQDN=$(gcloud compute instances describe token-broker --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
