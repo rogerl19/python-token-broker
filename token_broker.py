@@ -88,10 +88,11 @@ class Handler(BaseHTTPRequestHandler):
             
             if self.path == "/token":
                 token = self.create_access_token()
-            
-                self.send_response(200)
-                self.wfile.write(token.encode("utf-8"))
                 
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write(token.encode("utf-8"))                
             else:
                 self.send_error(404)
                 
